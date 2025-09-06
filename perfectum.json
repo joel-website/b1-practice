@@ -1,0 +1,39 @@
+{
+    "words": [
+      { "infinitive": "eten", "translation": "comer" },
+      { "infinitive": "maken", "translation": "hacer" },
+      { "infinitive": "lezen", "translation": "leer" },
+      { "infinitive": "schrijven", "translation": "escribir" },
+      { "infinitive": "lopen", "translation": "caminar" },
+      { "infinitive": "gaan", "translation": "ir" },
+      { "infinitive": "werken", "translation": "trabajar" },
+      { "infinitive": "slapen", "translation": "dormir" },
+      { "infinitive": "rijden", "translation": "conducir" },
+      { "infinitive": "zwemmen", "translation": "nadar" },
+      { "infinitive": "kijken", "translation": "mirar" },
+      { "infinitive": "kopen", "translation": "comprar" }
+    ],
+    "exercises": [
+      { "sentence": "Ik ___ mijn huiswerk ___ (maken).", "answer": ["heb","gemaakt"], "infinitive": "maken" },
+      { "sentence": "Wij ___ gisteren pizza ___ (eten).", "answer": ["hebben","gegeten"], "infinitive": "eten" },
+      { "sentence": "Hij ___ een brief ___ naar zijn vriend (schrijven).", "answer": ["heeft","geschreven"], "infinitive": "schrijven" },
+      { "sentence": "Zij ___ een boek ___ in de tuin (lezen).", "answer": ["heeft","gelezen"], "infinitive": "lezen" },
+      { "sentence": "Ik ___ naar het park ___ met mijn broer (lopen).", "answer": ["ben","gelopen"], "infinitive": "lopen" },
+      { "sentence": "Wij ___ naar de winkel ___ voor het avondeten (gaan).", "answer": ["zijn","gegaan"], "infinitive": "gaan" },
+      { "sentence": "Hij ___ de auto ___ naar zijn werk (rijden).", "answer": ["heeft","gereden"], "infinitive": "rijden" },
+      { "sentence": "Zij ___ in het zwembad ___ (zwemmen).", "answer": ["heeft","gezwommen"], "infinitive": "zwemmen" },
+      { "sentence": "Ik ___ veel ___ vandaag (werken).", "answer": ["heb","gewerkt"], "infinitive": "werken" },
+      { "sentence": "Wij ___ vroeg ___ (slapen).", "answer": ["hebben","geslapen"], "infinitive": "slapen" },
+      { "sentence": "Hij ___ naar de film ___ gisteravond (gaan).", "answer": ["is","gegaan"], "infinitive": "gaan" },
+      { "sentence": "Ik ___ een taart ___ voor mijn verjaardag (maken).", "answer": ["heb","gemaakt"], "infinitive": "maken" },
+      { "sentence": "Zij ___ een nieuwe jas ___ (kopen).", "answer": ["heeft","gekocht"], "infinitive": "kopen" },
+      { "sentence": "Wij ___ een boek ___ gelezen tijdens de vakantie (lezen).", "answer": ["hebben","gelezen"], "infinitive": "lezen" },
+      { "sentence": "Hij ___ een brief ___ naar zijn vriend (schrijven).", "answer": ["heeft","geschreven"], "infinitive": "schrijven" },
+      { "sentence": "Ik ___ televisie ___ gisteren (kijken).", "answer": ["heb","gekeken"], "infinitive": "kijken" },
+      { "sentence": "Wij ___ samen hard ___ aan het project (werken).", "answer": ["hebben","gewerkt"], "infinitive": "werken" },
+      { "sentence": "Zij ___ goed ___ na een lange dag (slapen).", "answer": ["heeft","geslapen"], "infinitive": "slapen" },
+      { "sentence": "Ik ___ naar huis ___ na het werk (rijden).", "answer": ["ben","gereden"], "infinitive": "rijden" },
+      { "sentence": "Hij ___ gisteren met zijn vrienden ___ in het park (lopen).", "answer": ["is","gelopen"], "infinitive": "lopen" }
+    ]
+  }
+  
