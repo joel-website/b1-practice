@@ -1,0 +1,35 @@
+{
+    "words": [
+      { "infinitive": "noord", "translation": "norte" },
+      { "infinitive": "zuid", "translation": "sur" },
+      { "infinitive": "oost", "translation": "este" },
+      { "infinitive": "west", "translation": "oeste" },
+      { "infinitive": "noordoost", "translation": "noreste" },
+      { "infinitive": "noordwest", "translation": "noroeste" },
+      { "infinitive": "zuidoost", "translation": "sureste" },
+      { "infinitive": "zuidwest", "translation": "suroeste" }
+    ],
+    "exercises": [
+      { "sentence": "De zon komt op in het ___ (este).", "answer": ["oost"] },
+      { "sentence": "De zon gaat onder in het ___ (oeste).", "answer": ["west"] },
+      { "sentence": "Nederland ligt ten ___ van België (norte).", "answer": ["noord"] },
+      { "sentence": "België ligt ten ___ van Nederland (sur).", "answer": ["zuid"] },
+      { "sentence": "De wind komt vandaag uit het ___ (noroeste).", "answer": ["noordwest"] },
+      { "sentence": "De boot vaart richting het ___ (sureste).", "answer": ["zuidoost"] },
+      { "sentence": "Het vliegtuig vliegt naar het ___ (noreste).", "answer": ["noordoost"] },
+      { "sentence": "Het dorp ligt ten ___ van de stad (oeste).", "answer": ["west"] },
+      { "sentence": "De bergen liggen in het ___ van het land (este).", "answer": ["oost"] },
+      { "sentence": "Het meer ligt ten ___ van het bos (sur).", "answer": ["zuid"] },
+      { "sentence": "Het kasteel staat in het ___ (norte) van het eiland.", "answer": ["noord"] },
+      { "sentence": "Het strand ligt ten ___ van de stad (sur).", "answer": ["zuid"] },
+      { "sentence": "De stad ligt tussen het westen en het ___ (noroeste).", "answer": ["noordwest"] },
+      { "sentence": "Het eiland ligt ten ___ van het vasteland (este).", "answer": ["oost"] },
+      { "sentence": "De rivier stroomt van het ___ naar het zuidoosten (sureste).", "answer": ["noordoost"] },
+      { "sentence": "De bergen liggen ten ___ van het meer (oeste).", "answer": ["west"] },
+      { "sentence": "Het kasteel staat in het ___ van de vallei (norte).", "answer": ["noord"] },
+      { "sentence": "Het dorp ligt ten ___ van de rivier (suroeste).", "answer": ["zuidwest"] },
+      { "sentence": "Het station ligt ten ___ van het centrum (este).", "answer": ["oost"] },
+      { "sentence": "De molen staat in het ___ van het dorp (noroeste).", "answer": ["noordwest"] }
+    ]
+  }
+  
