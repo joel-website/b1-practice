@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Praktijk van Nederlands - Verleden Perfectum</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen py-8">
+  <div class="max-w-3xl mx-auto px-4">
+    <div class="bg-white rounded-2xl shadow p-6">
+      <h1 class="text-2xl font-bold text-gray-800 mb-4">Verleden Perfectum oefenen</h1>
+      <p class="text-sm text-gray-600 mb-4">Vul de juiste woorden in de lege velden (auxiliair + voltooid deelwoord). Klik op <strong>Valideren</strong>.</p>
+
+      <!-- Verb list with tooltip -->
+      <div id="verb-list" class="mb-6 flex flex-wrap gap-2"></div>
+
+      <!-- JSON select box -->
+      <div class="mb-4 flex items-center gap-2">
+        <label for="json-selector" class="text-sm text-gray-700">📂 Kies een JSON:</label>
+        <select id="json-selector" class="border rounded px-2 py-1 text-sm flex-1">
+          <option value="">-- Laad een oefening --</option>
+        </select>
+        <button id="load-json-btn" class="ml-2 px-3 py-1 bg-blue-600 text-white rounded">Laden</button>
+      </div>
+
+      <!-- JSON load manual -->
+      <div class="mb-4 space-y-2">
+        <div class="flex gap-2 items-center">
+          <label for="file-input" class="text-sm text-gray-700">📁 JSON lokaal:</label>
+          <input id="file-input" type="file" accept="application/json" class="border rounded px-2 py-1 text-sm" />
+        </div>
+        <div class="flex gap-2 items-center">
+          <label for="json-url" class="text-sm text-gray-700">🌐 JSON URL:</label>
+          <input id="json-url" type="url" placeholder="https://.../perfectum.json" class="flex-1 border rounded px-2 py-1 text-sm" />
+          <button id="load-url-btn" class="ml-2 px-3 py-1 bg-blue-600 text-white rounded">Load</button>
+        </div>
+      </div>
+
+      <div id="exercise-container" class="space-y-4"></div>
+
+      <div class="mt-6 flex flex-wrap gap-3">
+        <button id="validate-btn" class="px-4 py-2 bg-green-600 text-white rounded-md shadow-sm hover:bg-green-700">Valideren</button>
+        <button id="reset-btn" class="px-4 py-2 bg-gray-200 text-gray-800 rounded-md shadow-sm hover:bg-gray-300">Opnieuw</button>
+        <div id="result-summary" class="ml-auto text-sm font-semibold text-gray-700"></div>
+      </div>
+    </div>
+  </div>
+
+<script>
+let exercises = [];
+let verbs = [];
+const container = document.getElementById('exercise-container');
+const verbListEl = document.getElementById('verb-list');
+const summaryEl = document.getElementById('result-summary');
+const jsonSelector = document.getElementById('json-selector');
+
+// --- Función para adjuntar datos del JSON ---
+function attachData(data){
+  verbs = data.words || [];
+  exercises = data.exercises || [];
+  renderVerbList();
+  renderExercises();
+}
+
+// --- Render lista de verbos con tooltip ---
+function renderVerbList(){
+  verbListEl.innerHTML = '';
+  verbs.forEach(v=>{
+    const span = document.createElement('span');
+    span.textContent = v.infinitive;
+    span.title = v.translation;
+    span.className = 'px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm cursor-help';
+    verbListEl.appendChild(span);
+  });
+}
+
+// --- Render ejercicios con inputs ---
+function renderExercises(){
+  container.innerHTML = '';
+  exercises.forEach((ex,idx)=>{
+    const wrap = document.createElement('div');
+    wrap.className='p-4 border rounded-lg bg-white';
+
+    const label = document.createElement('label');
+    label.className='block text-sm font-medium text-gray-700 mb-2';
+    label.textContent=`${idx+1}. Vul in:`;
+
+    const p = document.createElement('p');
+    p.className='text-lg text-gray-800 flex flex-wrap items-center gap-2';
+
+    const parts = ex.sentence.split('___');
+    p.appendChild(document.createTextNode(parts[0]||''));
+
+    ex.answer.forEach((ans,i)=>{
+      const input = document.createElement('input');
+      input.type='text';
+      input.className='border rounded px-2 py-1 text-base w-32 focus:outline-none focus:ring-2 focus:ring-blue-200';
+      input.setAttribute('data-answer',ans);
+      input.placeholder='...';
+      p.appendChild(input);
+      if(parts[i+1]) p.appendChild(document.createTextNode(parts[i+1]));
+    });
+
+    wrap.appendChild(label);
+    wrap.appendChild(p);
+    container.appendChild(wrap);
+  });
+}
+
+// --- Normalizar texto ---
+function normalize(s){ return (s||'').toLowerCase().trim(); }
+
+// --- Validación ---
+function validateAll(){
+  const inputs = container.querySelectorAll('input[data-answer]');
+  let correct=0;
+  inputs.forEach(input=>{
+    input.classList.remove('ring-2','ring-green-200','ring-red-200','border-green-500','border-red-500');
+    if(normalize(input.value)===normalize(input.dataset.answer)){
+      input.classList.add('border-green-500','ring-2','ring-green-200');
+      correct++;
+    } else {
+      input.classList.add('border-red-500','ring-2','ring-red-200');
+    }
+  });
+  summaryEl.textContent=`Resultado: ${correct}/${inputs.length}`;
+}
+
+// --- Reset ---
+function resetAll(){
+  const inputs = container.querySelectorAll('input[data-answer]');
+  inputs.forEach(i=>{
+    i.value='';
+    i.classList.remove('border-green-500','border-red-500','ring-2','ring-green-200','ring-red-200');
+  });
+  summaryEl.textContent='';
+}
+
+// --- Eventos ---
+document.getElementById('validate-btn').addEventListener('click',validateAll);
+document.getElementById('reset-btn').addEventListener('click',resetAll);
+
+// --- Cargar desde URL ---
+document.getElementById('load-url-btn').addEventListener('click',()=>{
+  const url = document.getElementById('json-url').value.trim();
+  if(!url) return alert('Voer een geldige URL in.');
+  fetch(url,{cache:'no-store'})
+    .then(res=>res.json())
+    .then(data=>attachData(data))
+    .catch(err=>alert('Fout bij laden JSON: '+err));
+});
+
+// --- Cargar desde archivo local ---
+document.getElementById('file-input').addEventListener('change',(e)=>{
+  const f = e.target.files[0];
+  if(!f) return;
+  const reader = new FileReader();
+  reader.onload = ev => {
+    try{
+      const data = JSON.parse(ev.target.result);
+      attachData(data);
+    }catch(err){
+      alert('Ongeldig JSON-bestand: '+err);
+    }
+  };
+  reader.readAsText(f);
+});
+
+// --- Cargar índice JSON ---
+const indiceUrl = 'https://drive.google.com/uc?export=download&id=1c_1nBH1BgDNykTyki2KFW1YTI5qM-cRF'; // Cambia por tu ID
+fetch(indiceUrl)
+  .then(res=>res.json())
+  .then(data=>{
+    data.forEach(item=>{
+      const option = document.createElement('option');
+      option.value = item.url;
+      option.textContent = item.name;
+      jsonSelector.appendChild(option);
+    });
+  })
+  .catch(err=>console.error('Fout bij laden van indice.json:', err));
+
+// --- Cargar JSON seleccionado ---
+document.getElementById('load-json-btn').addEventListener('click',()=>{
+  const url = jsonSelector.value;
+  if(!url) return alert('Selecciona un JSON.');
+  fetch(url,{cache:'no-store'})
+    .then(res=>res.json())
+    .then(data=>attachData(data))
+    .catch(err=>alert('Fout bij laden JSON: '+err));
+});
+</script>
+</body>
+</html>
+
