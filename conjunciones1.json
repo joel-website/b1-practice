@@ -1,0 +1,26 @@
+{
+    "words": ["omdat", "hoewel", "terwijl", "zodat", "voordat", "nadat", "als", "wanneer", "en", "of", "maar", "want", "dus"],
+    "exercises": [
+      { "sentence": "Ik ga vroeg naar bed ___ ik morgen vroeg moet opstaan.", "answer": "omdat" },
+      { "sentence": "Ze lacht ___ ze moe is.", "answer": "hoewel" },
+      { "sentence": "Hij leest een boek ___ hij in de trein zit.", "answer": "terwijl" },
+      { "sentence": "We eten snel ___ we op tijd bij de film zijn.", "answer": "zodat" },
+      { "sentence": "Ze wast haar handen ___ ze gaat eten.", "answer": "voordat" },
+      { "sentence": "Hij belt me ___ hij thuiskomt.", "answer": "nadat" },
+      { "sentence": "___ het regent, gaan we toch wandelen.", "answer": "als" },
+      { "sentence": "Ik weet niet ___ ik zal kiezen.", "answer": "of" },
+      { "sentence": "Ze houdt van koffie ___ van thee.", "answer": "en" },
+      { "sentence": "Hij is slim ___ hij vergeet vaak dingen.", "answer": "maar" },
+      { "sentence": "Ik kan niet komen, ___ ik moet werken.", "answer": "want" },
+      { "sentence": "Het regende hard, ___ we gingen toch naar buiten.", "answer": "dus" },
+      { "sentence": "Ik neem een paraplu mee ___ het regent.", "answer": "als" },
+      { "sentence": "We praten terwijl we wandelen ___ we naar huis gaan.", "answer": "tot" },
+      { "sentence": "Hij studeert veel ___ hij wil slagen voor het examen.", "answer": "omdat" },
+      { "sentence": "Ze werkt hard, ___ ze wil promotie krijgen.", "answer": "omdat" },
+      { "sentence": "Ik luister naar muziek ___ ik mijn huiswerk maak.", "answer": "terwijl" },
+      { "sentence": "Je mag kiezen ___ je wilt koffie ___ thee.", "answer": ["of","of"] },
+      { "sentence": "Hij gaat naar de winkel, ___ hij koopt wat brood.", "answer": "en" },
+      { "sentence": "Ik blijf thuis ___ het slecht weer is.", "answer": "omdat" }
+    ]
+  }
+  
