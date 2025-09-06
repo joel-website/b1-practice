@@ -1,5 +1,19 @@
 {
-    "words": ["omdat", "hoewel", "terwijl", "zodat", "voordat", "nadat", "als", "wanneer", "en", "of", "maar", "want", "dus"],
+    "words": [
+      { "infinitive": "omdat", "translation": "porque" },
+      { "infinitive": "hoewel", "translation": "aunque" },
+      { "infinitive": "terwijl", "translation": "mientras" },
+      { "infinitive": "zodat", "translation": "para que" },
+      { "infinitive": "voordat", "translation": "antes de que" },
+      { "infinitive": "nadat", "translation": "después de que" },
+      { "infinitive": "als", "translation": "si / cuando" },
+      { "infinitive": "wanneer", "translation": "cuando" },
+      { "infinitive": "en", "translation": "y" },
+      { "infinitive": "of", "translation": "o" },
+      { "infinitive": "maar", "translation": "pero" },
+      { "infinitive": "want", "translation": "porque / ya que" },
+      { "infinitive": "dus", "translation": "por lo tanto / así que" }
+    ],
     "exercises": [
       { "sentence": "Ik ga vroeg naar bed ___ ik morgen vroeg moet opstaan.", "answer": ["omdat"] },
       { "sentence": "Ze lacht ___ ze moe is.", "answer": ["hoewel"] },
